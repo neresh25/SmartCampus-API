@@ -22,6 +22,42 @@ This project is a high-performance RESTful API developed for the "Smart Campus" 
 
 ---
 
+## 📡 Sample curl Commands
+
+**1. Discover the API (GET root endpoint)**
+```bash
+curl -X GET http://localhost:8080/SmartCampus/api/v1
+```
+
+**2. Create a new Room**
+```bash
+curl -X POST http://localhost:8080/SmartCampus/api/v1/rooms \
+  -H "Content-Type: application/json" \
+  -d '{"id": "ENGINEERING-701", "name": "Robotics Research Lab", "capacity": 25}'
+```
+
+**3. Register a new Sensor linked to a valid Room**
+```bash
+curl -X POST http://localhost:8080/SmartCampus/api/v1/sensors \
+  -H "Content-Type: application/json" \
+  -d '{"id": "TEMP-01", "type": "Temperature", "status": "ACTIVE", "currentValue": 22.5, "roomId": "ENGINEERING-701"}'
+```
+
+**4. Filter Sensors by type**
+```bash
+curl -X GET "http://localhost:8080/SmartCampus/api/v1/sensors?type=Temperature"
+```
+
+**5. Post a new Reading to a Sensor (updates currentValue)**
+```bash
+curl -X POST http://localhost:8080/SmartCampus/api/v1/sensors/TEMP-01/readings \
+  -H "Content-Type: application/json" \
+  -d '{"id": "READING-1A", "timestamp": 1713800000000, "value": 26.8}'
+```
+
+---
+
+
 ## 🛠️ Technical Analysis (Coursework Justifications)
 
 ### 1.1 Project & Application Configuration
