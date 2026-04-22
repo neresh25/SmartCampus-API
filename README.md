@@ -4,7 +4,7 @@ This project is a high-performance RESTful API developed for the "Smart Campus" 
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
 *   **Java 17+**
